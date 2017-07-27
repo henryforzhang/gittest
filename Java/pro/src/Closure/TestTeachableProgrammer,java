@@ -1,0 +1,69 @@
+/**Description:
+  *2017/07/24 ZW
+  *purpose:
+  *Something about Closure 
+  *
+  */
+
+package Class.Closure;
+
+interface Teachable
+{
+	void work();
+}
+
+class Programmer
+{
+	private String name;
+
+	public Programmer(){}
+	public Programmer(String name)
+	{
+		this.name = name;
+	}
+	public String getName()
+	{
+		return name;
+	}
+
+	public void work()
+	{
+		System.out.println(name + "Working hard on the keyboard");
+	}
+}
+
+class TeachableProgrammer extends Programmer
+{
+	public TeachableProgrammer(){}
+	public TeachableProgrammer(String name)
+	{
+		super(name);
+	}
+
+	private void teach()
+	{
+		System.out.println(getName() +" teacher teach");
+	}
+
+	private class Closure implements Teachable
+	{
+		public void work()
+		{
+			teach();
+		}
+	}
+	public Teachable getCallbackReference()
+	{
+		return new Closure();
+	}
+}
+
+public class TestTeachableProgrammer
+{
+	public static void main(String[] args)
+	{
+		TeachableProgrammer tp = new TeachableProgrammer("Li Gang");
+		tp.work();
+		tp.getCallbackReference().work();
+	}
+}
