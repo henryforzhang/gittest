@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Hello You silly dog!
 What do you want to do?
+=======
+The early bird catch the worm
+>>>>>>> c7d625b918eba50887c0a7fc30ffd14d9d9c94cc
